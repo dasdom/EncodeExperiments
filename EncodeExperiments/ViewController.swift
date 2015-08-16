@@ -10,9 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var firstNameLabel: UILabel!
+  @IBOutlet weak var lastNameLabel: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+
+    let me = Person(firstName: "Dominik", lastName: "Hauser")
+    
+    Person.encode(me)
+    
+    let myClone = Person.decode()
+    
+    firstNameLabel.text = myClone?.firstName
+    lastNameLabel.text = myClone?.lastName
   }
 
   override func didReceiveMemoryWarning() {
