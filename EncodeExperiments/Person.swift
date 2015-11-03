@@ -43,9 +43,9 @@ extension Person {
     
     required init?(coder aDecoder: NSCoder) {
       guard let firstName = aDecoder.decodeObjectForKey("firstName") as? String else { person = nil; super.init(); return nil }
-      guard let laseName = aDecoder.decodeObjectForKey("lastName") as? String else { person = nil; super.init(); return nil }
+      guard let lastName = aDecoder.decodeObjectForKey("lastName") as? String else { person = nil; super.init(); return nil }
       
-      person = Person(firstName: firstName, lastName: laseName)
+      person = Person(firstName: firstName, lastName: lastName)
       
       super.init()
     }
